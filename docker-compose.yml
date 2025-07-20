@@ -22,9 +22,9 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_USER: camilo
-      POSTGRES_PASSWORD: secret123
-      POSTGRES_DB: todo_db
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
     volumes:
       - postgres_data:/var/lib/postgresql/data
 

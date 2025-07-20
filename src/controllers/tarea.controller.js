@@ -1,3 +1,4 @@
+// src/controllers/tarea.controller.js
 const { Tarea } = require('../models');
 
 exports.listar = async (req, res) => {

@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const controlador = require('../controllers/tarea.controller');
 
-// CRUD
 /**
  * @swagger
  * tags:
