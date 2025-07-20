@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
+const authRoutes = require('./routes/auth.routes');
+const authMiddleware = require('./middlewares/auth.middleware');
 
 const { sequelize } = require('./models');
 const tareaRoutes = require('./routes/tarea.routes');
@@ -8,6 +10,8 @@ const tareaRoutes = require('./routes/tarea.routes');
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use('/api/auth', authRoutes);
+app.use('/api/tareas', authMiddleware, tareaRoutes);
 app.use('/api/tareas', tareaRoutes);
 
 const PORT = process.env.PORT || 3000;
